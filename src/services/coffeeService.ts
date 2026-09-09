@@ -16,7 +16,7 @@ let coffeeShops: CoffeeShop[] = [
 ]
 
 export const coffeeService = {
-    getAllCoffeeShops: (): CoffeeShop[] => coffeeShops,
+    getShops: (): CoffeeShop[] => coffeeShops,
     createShop: (shop: Omit<CoffeeShop, 'id'>) => {
         const newShop: CoffeeShop = {
             ...shop,

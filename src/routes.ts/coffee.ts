@@ -2,7 +2,7 @@ import Elysia, { t } from "elysia";
 import { coffeeService,  } from "../services/coffeeService";
 
 export const coffeeController = new Elysia({ prefix: '/coffee' })
-    .get('/', () => coffeeService.getAllCoffeeShops())
+    .get('/', () => coffeeService.getShops())
     .post('/', ({ body }) => {
     return coffeeService.createShop(body);
 }, {
