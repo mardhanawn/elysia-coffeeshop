@@ -17,7 +17,7 @@ let coffeeShops: CoffeeShop[] = [
 
 export const coffeeService = {
     getAllCoffeeShops: (): CoffeeShop[] => coffeeShops,
-    addShop: (shop: Omit<CoffeeShop, 'id'>) => {
+    createShop: (shop: Omit<CoffeeShop, 'id'>) => {
         const newShop: CoffeeShop = {
             ...shop,
             id: crypto.randomUUID(),

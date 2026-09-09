@@ -4,7 +4,7 @@ import { coffeeService,  } from "../services/coffeeService";
 export const coffeeController = new Elysia({ prefix: '/coffee' })
     .get('/', () => coffeeService.getAllCoffeeShops())
     .post('/', ({ body }) => {
-    return coffeeService.addShop(body);
+    return coffeeService.createShop(body);
 }, {
     body: t.Object({
         name: t.String(),
