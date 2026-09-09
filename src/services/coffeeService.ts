@@ -24,5 +24,17 @@ export const coffeeService = {
         };
         coffeeShops.push(newShop);
         return newShop;
+    },
+    updateShop: (id: string, updates: Partial<Omit<CoffeeShop, 'id'>>) => {
+        const index = coffeeShops.findIndex(shop => shop.id === id);
+        if (index === -1) {
+            throw new Error('Coffee shop not found');
+        }
+        const updatedShop = {
+            ...coffeeShops[index],
+            ...updates
+        };
+        coffeeShops[index] = updatedShop;
+        return coffeeShops[index];
     }
 }
