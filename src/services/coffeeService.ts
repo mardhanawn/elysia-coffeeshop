@@ -1,0 +1,28 @@
+import { CoffeeShop } from "../types/coffee";
+
+let coffeeShops: CoffeeShop[] = [
+    {
+        id: '1',
+        name: 'Parakarta Coffee Roasters',
+        description: 'A coffee roastery and slow bar/experience bar located in the Kemang area, South Jakarta. This place is known as one of the top destinations for manual brew coffee lovers and those seeking an intimate and peaceful coffee-drinking atmosphere.',
+        location: 'Jl. Kemang Timur Dalam No.9 Unit E, RT.4/RW.3, Bangka, Kec. Mampang Prapatan, Jakarta Selatan',
+    },
+    {
+        id: '2',
+        name: 'Coffee of Things',
+        description: 'Coffee of Things is a hidden-gem slow bar and micro-roastery located on a cozy house terrace in Tebet, South Jakarta. It is run by a passionate retired barista affectionately known as Om Acoy.',
+        location: 'Jl. Tebet Barat Dalam IX No.19, RT.3/RW.6, Tebet Barat, Kec. Tebet, Kota Jakarta Selatan',
+    }
+]
+
+export const coffeeService = {
+    getAllCoffeeShops: (): CoffeeShop[] => coffeeShops,
+    addShop: (shop: Omit<CoffeeShop, 'id'>) => {
+        const newShop: CoffeeShop = {
+            ...shop,
+            id: crypto.randomUUID(),
+        };
+        coffeeShops.push(newShop);
+        return newShop;
+    }
+}
