@@ -1,6 +1,6 @@
 export interface CoffeeShop {
-    id: string;
-    name: string;
-    description: string
-    location: string;
+	id: string;
+	name: string;
+	description: string;
+	location: string;
 }
